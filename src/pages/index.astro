@@ -9,6 +9,13 @@ import "../styles/global.css";
       .getElementById("loading")
       ?.classList.add("opacity-0", "pointer-events-none");
   }, 1500);
+
+  document.getElementById("menu-toggle")?.addEventListener("click", () => {
+    document.getElementById("icon-open")?.classList.toggle("opacity-0");
+    document.getElementById("icon-close")?.classList.toggle("opacity-0");
+    document.getElementById("menu")?.classList.toggle("hidden");
+    document.getElementById("menu")?.classList.toggle("flex");
+  });
 </script>
 
 <html lang="en">
@@ -36,29 +43,53 @@ import "../styles/global.css";
           hiroto kanzaki
         </span>
       </div>
-      <div class="flex gap-3 text-zinc-600 items-center">
+      <div
+        id="menu"
+        class="hidden fixed top-12 left-0 p-3 flex-col w-full gap-3 items-center bg-white/80 text-zinc-600 sm:static sm:flex sm:flex-row sm:w-auto sm:p-0"
+      >
         <a href="" class="hover:text-zinc-400">news</a>
         <a href="" class="hover:text-zinc-400">profile</a>
         <a href="" class="hover:text-zinc-400">discography</a>
-        <a
-          href="https://www.instagram.com/hiroto_kanzaki_/"
-          class="hover:text-zinc-400"
-        >
-          <Icon name="fa6-brands:instagram" />
-        </a>
-        <a href="https://x.com/hirotokanzaki1" class="hover:text-zinc-400">
-          <Icon name="fa6-brands:x-twitter" />
-        </a>
-        <a
-          href="https://youtube.com/@hirotokanzaki3880"
-          class="hover:text-zinc-400"
-        >
-          <Icon name="fa6-brands:youtube" />
-        </a>
-        <a href="https://www.tiktok.com/@k_hiroto_" class="hover:text-zinc-400">
-          <Icon name="fa6-brands:tiktok" />
-        </a>
+        <div class="flex gap-3 my-2 sm:my-0">
+          <a
+            href="https://www.instagram.com/hiroto_kanzaki_/"
+            class="hover:text-zinc-400"
+          >
+            <Icon name="fa6-brands:instagram" />
+          </a>
+          <a href="https://x.com/hirotokanzaki1" class="hover:text-zinc-400">
+            <Icon name="fa6-brands:x-twitter" />
+          </a>
+          <a
+            href="https://youtube.com/@hirotokanzaki3880"
+            class="hover:text-zinc-400"
+          >
+            <Icon name="fa6-brands:youtube" />
+          </a>
+          <a
+            href="https://www.tiktok.com/@k_hiroto_"
+            class="hover:text-zinc-400"
+          >
+            <Icon name="fa6-brands:tiktok" />
+          </a>
+        </div>
       </div>
+      <button
+        id="menu-toggle"
+        class="relative flex size-6 items-center justify-center sm:hidden"
+        aria-label="Toggle menu"
+      >
+        <Icon
+          name="fa6-solid:bars"
+          id="icon-open"
+          class="absolute text-zinc-600 text-xl transition-opacity duration-300"
+        />
+        <Icon
+          name="fa6-solid:xmark"
+          id="icon-close"
+          class="absolute text-zinc-600 text-xl opacity-0 transition-opacity duration-300"
+        />
+      </button>
     </header>
     <div class="mx-auto text-center space-y-3">
       <img class="w-100 mx-auto" src="/profile.png" />
