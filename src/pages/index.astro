@@ -1,17 +1,68 @@
 ---
-
+import { Icon } from "astro-icon/components";
+import "../styles/global.css";
 ---
 
+<script>
+  setTimeout(() => {
+    document
+      .getElementById("loading")
+      ?.classList.add("opacity-0", "pointer-events-none");
+  }, 1500);
+</script>
+
 <html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" href="/favicon.ico" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <title>hiroto kanzaki</title>
+  </head>
+  <body>
+    <div
+      id="loading"
+      class="fixed inset-0 z-50 flex items-center bg-white transition-opacity duration-750"
+    >
+      <div class="w-full text-center">
+        <span class="font-serif text-lg text-zinc-600 whitespace-nowrap">
+          hiroto kanzaki
+        </span>
+      </div>
+    </div>
+    <header class="mx-auto container p-6 flex items-center">
+      <div class="grow">
+        <span class="font-serif text-xl text-zinc-700 whitespace-nowrap">
+          hiroto kanzaki
+        </span>
+      </div>
+      <div class="flex gap-3 text-zinc-600 items-center">
+        <a href="" class="hover:text-zinc-400">news</a>
+        <a href="" class="hover:text-zinc-400">profile</a>
+        <a href="" class="hover:text-zinc-400">discography</a>
+        <a
+          href="https://www.instagram.com/hiroto_kanzaki_/"
+          class="hover:text-zinc-400"
+        >
+          <Icon name="fa6-brands:instagram" />
+        </a>
+        <a href="https://x.com/hirotokanzaki1" class="hover:text-zinc-400">
+          <Icon name="fa6-brands:x-twitter" />
+        </a>
+        <a
+          href="https://youtube.com/@hirotokanzaki3880"
+          class="hover:text-zinc-400"
+        >
+          <Icon name="fa6-brands:youtube" />
+        </a>
+        <a href="https://www.tiktok.com/@k_hiroto_" class="hover:text-zinc-400">
+          <Icon name="fa6-brands:tiktok" />
+        </a>
+      </div>
+    </header>
+    <div class="mx-auto text-center space-y-3">
+      <img class="w-100 mx-auto" src="/profile.png" />
+      <p class="text-zinc-600 font-serif">Composer / Drummer</p>
+    </div>
+  </body>
 </html>
