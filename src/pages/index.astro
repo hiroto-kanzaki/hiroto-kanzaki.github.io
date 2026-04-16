@@ -4,24 +4,23 @@ import "../styles/global.css";
 ---
 
 <script>
+  const $ = (id: string) => document.getElementById(id);
+
   if (!sessionStorage.getItem("visited")) {
     sessionStorage.setItem("visited", "1");
-    setTimeout(() => {
-      document
-        .getElementById("loading")
-        ?.classList.add("opacity-0", "pointer-events-none");
-    }, 1500);
+    setTimeout(
+      () => $("loading")?.classList.add("opacity-0", "pointer-events-none"),
+      1500,
+    );
   } else {
-    document
-      .getElementById("loading")
-      ?.classList.add("opacity-0", "pointer-events-none");
+    $("loading")?.classList.add("hidden");
   }
 
-  document.getElementById("menu-toggle")?.addEventListener("click", () => {
-    document.getElementById("icon-open")?.classList.toggle("opacity-0");
-    document.getElementById("icon-close")?.classList.toggle("opacity-0");
-    document.getElementById("menu")?.classList.toggle("hidden");
-    document.getElementById("menu")?.classList.toggle("flex");
+  $("menu-toggle")?.addEventListener("click", () => {
+    $("icon-open")?.classList.toggle("opacity-0");
+    $("icon-close")?.classList.toggle("opacity-0");
+    $("menu")?.classList.toggle("hidden");
+    $("menu")?.classList.toggle("flex");
   });
 </script>
 
