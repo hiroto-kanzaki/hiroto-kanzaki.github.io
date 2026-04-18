@@ -3,6 +3,7 @@ import Loading from "../components/Loading.astro";
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
 import "../styles/global.css";
+import { Icon } from "astro-icon/components";
 ---
 
 <html lang="ja">
@@ -16,6 +17,52 @@ import "../styles/global.css";
   <body>
     <Loading />
     <Header />
+    <h1 class="my-10 font-serif text-xl text-center text-zinc-800">profile</h1>
+    <main>
+      <div class="mx-auto text-center px-3 md:w-150">
+        <img class="md:rounded-xl md:shadow-md" src="/profile.png" />
+        <p class="mt-10 text-zinc-800 font-serif text-base/8">
+          神崎広斗 / hiroto kanzaki<br />
+          音楽プロデューサー / コンポーザー
+        </p>
+      </div>
+      <div
+        class="mt-10 px-6 mx-auto max-w-150 text-zinc-800 font-serif text-xs/7.5 space-y-3 indent-3"
+      >
+        <p>
+          これまでに独自の感性と深いメロディラインを武器に、多くの楽曲を生み出してきました。
+          <br />
+          聴く人の心に寄り添い、繊細でありながら力強いサウンドを追求。
+          <br />
+          日常の中で見過ごされがちな瞬間や感情を音楽で描き出し、聴く人の心に鮮やかな物語を届けます。
+        </p>
+        <p class="pt-8">
+          ジャンルを超えた音楽制作を得意とし、シンガーソングライターや映像作品への楽曲提供など、幅広く活動中。
+          <br />
+          「音楽を通じて、誰かの人生の風景を少しでも彩りたい」という思いを胸に、これからも挑戦を続けます。
+        </p>
+      </div>
+      <div class="flex justify-center gap-8 my-10 text-zinc-800 text-xl">
+        <a
+          href="https://www.instagram.com/hiroto_kanzaki_/"
+          class="hover:text-zinc-400"
+        >
+          <Icon name="fa6-brands:instagram" />
+        </a>
+        <a href="https://x.com/hirotokanzaki1" class="hover:text-zinc-400">
+          <Icon name="fa6-brands:x-twitter" />
+        </a>
+        <a
+          href="https://youtube.com/@hirotokanzaki3880"
+          class="hover:text-zinc-400"
+        >
+          <Icon name="fa6-brands:youtube" />
+        </a>
+        <a href="https://www.tiktok.com/@k_hiroto_" class="hover:text-zinc-400">
+          <Icon name="fa6-brands:tiktok" />
+        </a>
+      </div>
+    </main>
     <Footer />
   </body>
 </html>
