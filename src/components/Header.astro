@@ -15,17 +15,19 @@ import { Icon } from "astro-icon/components";
 
 <header class="mx-auto container p-6 flex items-center">
   <div class="grow">
-    <span class="font-serif text-xl text-zinc-700 whitespace-nowrap">
-      hiroto kanzaki
-    </span>
+    <a href="/">
+      <span class="font-serif text-xl text-zinc-700 whitespace-nowrap">
+        hiroto kanzaki
+      </span>
+    </a>
   </div>
   <div
     id="menu"
     class="hidden fixed top-12 left-0 p-3 flex-col w-full gap-3 items-center bg-white/80 text-zinc-600 sm:static sm:flex sm:flex-row sm:w-auto sm:p-0"
   >
-    <a href="" class="hover:text-zinc-400">news</a>
-    <a href="" class="hover:text-zinc-400">profile</a>
-    <a href="" class="hover:text-zinc-400">works</a>
+    <a href="/news" class="hover:text-zinc-400">news</a>
+    <a href="/profile" class="hover:text-zinc-400">profile</a>
+    <a href="/works" class="hover:text-zinc-400">works</a>
     <div class="flex gap-3 my-2 sm:my-0">
       <a
         href="https://www.instagram.com/hiroto_kanzaki_/"
