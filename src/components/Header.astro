@@ -13,56 +13,59 @@ import { Icon } from "astro-icon/components";
   });
 </script>
 
-<header class="mx-auto container p-6 flex items-center">
-  <div class="grow">
-    <a href="/">
-      <span class="font-serif text-xl text-zinc-700 whitespace-nowrap">
-        hiroto kanzaki
-      </span>
-    </a>
-  </div>
-  <div
-    id="menu"
-    class="hidden fixed top-14 left-0 p-3 flex-col w-full gap-4 items-center bg-white/80 text-zinc-600 sm:static sm:flex sm:flex-row sm:w-auto sm:p-0 sm:gap-10"
-  >
-    <a href="/news" class="hover:text-zinc-400 hover:underline">news</a>
-    <a href="/profile" class="hover:text-zinc-400 hover:underline">profile</a>
-    <a href="/works" class="hover:text-zinc-400 hover:underline">works</a>
-    <div class="flex gap-5 my-1 sm:my-0">
-      <a
-        href="https://www.instagram.com/hiroto_kanzaki_/"
-        class="hover:text-zinc-400"
-      >
-        <Icon name="fa6-brands:instagram" />
-      </a>
-      <a href="https://x.com/hirotokanzaki1" class="hover:text-zinc-400">
-        <Icon name="fa6-brands:x-twitter" />
-      </a>
-      <a
-        href="https://youtube.com/@hirotokanzaki3880"
-        class="hover:text-zinc-400"
-      >
-        <Icon name="fa6-brands:youtube" />
-      </a>
-      <a href="https://www.tiktok.com/@k_hiroto_" class="hover:text-zinc-400">
-        <Icon name="fa6-brands:tiktok" />
+<div class="fixed top-0 w-full bg-white/90 z-10">
+  <header class="mx-auto container p-6 flex items-center">
+    <div class="grow">
+      <a href="/">
+        <span class="font-serif text-xl text-zinc-700 whitespace-nowrap">
+          hiroto kanzaki
+        </span>
       </a>
     </div>
-  </div>
-  <button
-    id="menu-toggle"
-    class="relative flex size-6 items-center justify-center sm:hidden"
-    aria-label="Toggle menu"
-  >
-    <Icon
-      name="fa6-solid:bars"
-      id="icon-open"
-      class="absolute text-zinc-600 text-xl transition-opacity duration-300"
-    />
-    <Icon
-      name="fa6-solid:xmark"
-      id="icon-close"
-      class="absolute text-zinc-600 text-xl opacity-0 transition-opacity duration-300"
-    />
-  </button>
-</header>
+    <div
+      id="menu"
+      class="hidden fixed top-19 left-0 pb-3 flex-col w-full gap-4 items-center bg-white/90 text-zinc-600 sm:static sm:flex sm:flex-row sm:w-auto sm:p-0 sm:gap-10 sm:bg-white/0"
+    >
+      <a href="/news" class="hover:text-zinc-400 hover:underline">news</a>
+      <a href="/profile" class="hover:text-zinc-400 hover:underline">profile</a>
+      <a href="/works" class="hover:text-zinc-400 hover:underline">works</a>
+      <div class="flex gap-5 my-1 sm:my-0">
+        <a
+          href="https://www.instagram.com/hiroto_kanzaki_/"
+          class="hover:text-zinc-400"
+        >
+          <Icon name="fa6-brands:instagram" />
+        </a>
+        <a href="https://x.com/hirotokanzaki1" class="hover:text-zinc-400">
+          <Icon name="fa6-brands:x-twitter" />
+        </a>
+        <a
+          href="https://youtube.com/@hirotokanzaki3880"
+          class="hover:text-zinc-400"
+        >
+          <Icon name="fa6-brands:youtube" />
+        </a>
+        <a href="https://www.tiktok.com/@k_hiroto_" class="hover:text-zinc-400">
+          <Icon name="fa6-brands:tiktok" />
+        </a>
+      </div>
+    </div>
+    <button
+      id="menu-toggle"
+      class="relative flex size-6 items-center justify-center sm:hidden"
+      aria-label="Toggle menu"
+    >
+      <Icon
+        name="fa6-solid:bars"
+        id="icon-open"
+        class="absolute text-zinc-600 text-xl transition-opacity duration-300"
+      />
+      <Icon
+        name="fa6-solid:xmark"
+        id="icon-close"
+        class="absolute text-zinc-600 text-xl opacity-0 transition-opacity duration-300"
+      />
+    </button>
+  </header>
+</div>
+<div class="h-19"></div>
