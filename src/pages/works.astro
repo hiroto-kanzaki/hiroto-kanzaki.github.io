@@ -3,6 +3,25 @@ import Loading from "../components/Loading.astro";
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
 import "../styles/global.css";
+import { Icon } from "astro-icon/components";
+
+const subs = [
+  {
+    icon: "fa6-brands:itunes",
+    href: "https://music.apple.com/jp/artist/1644722048",
+    text: "Apple Music",
+  },
+  {
+    icon: "fa6-brands:spotify",
+    href: "https://open.spotify.com/intl-ja/artist/2zV2y9I27BhYMCV5FMkxg3",
+    text: "Spotify",
+  },
+  {
+    icon: "fa6-brands:amazon",
+    href: "https://music.amazon.co.jp/artists/B0BF29P9HT",
+    text: "Amazon Music",
+  },
+];
 ---
 
 <html lang="ja">
@@ -60,6 +79,28 @@ import "../styles/global.css";
         </p>
       </article>
     </main>
+    <div class="my-20 mx-auto text-center">
+      <h2 class="text-zinc-500 font-serif my-10 text-sm">
+        and more, listen on...
+      </h2>
+      <div
+        class="mx-auto flex justify-between gap-4 max-w-fit flex-col sm:max-w-100 sm:flex-row"
+      >
+        {
+          subs.map((s) => (
+            <div>
+              <a
+                href={s.href}
+                class="text-zinc-600 hover:text-zinc-300 flex items-center gap-2"
+              >
+                <Icon class="text-2xl" name={s.icon} />
+                <span class="text-sm">{s.text}</span>
+              </a>
+            </div>
+          ))
+        }
+      </div>
+    </div>
     <Footer />
   </body>
 </html>
