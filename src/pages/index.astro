@@ -1,28 +1,9 @@
 ---
-import { Icon } from "astro-icon/components";
+import Loading from "../components/Loading.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
 import "../styles/global.css";
 ---
-
-<script>
-  const $ = (id: string) => document.getElementById(id);
-
-  if (!sessionStorage.getItem("visited")) {
-    sessionStorage.setItem("visited", "1");
-    setTimeout(
-      () => $("loading")?.classList.add("opacity-0", "pointer-events-none"),
-      2500,
-    );
-  } else {
-    $("loading")?.classList.add("hidden");
-  }
-
-  $("menu-toggle")?.addEventListener("click", () => {
-    $("icon-open")?.classList.toggle("opacity-0");
-    $("icon-close")?.classList.toggle("opacity-0");
-    $("menu")?.classList.toggle("hidden");
-    $("menu")?.classList.toggle("flex");
-  });
-</script>
 
 <html lang="ja">
   <head>
@@ -33,70 +14,8 @@ import "../styles/global.css";
     <title>hiroto kanzaki</title>
   </head>
   <body>
-    <div
-      id="loading"
-      class="fixed inset-0 z-50 flex items-center bg-white transition-opacity duration-[1.5s]"
-    >
-      <div class="w-full text-center">
-        <span class="font-serif text-lg text-zinc-600 whitespace-nowrap">
-          hiroto kanzaki
-        </span>
-      </div>
-    </div>
-    <header class="mx-auto container p-6 flex items-center">
-      <div class="grow">
-        <span class="font-serif text-xl text-zinc-700 whitespace-nowrap">
-          hiroto kanzaki
-        </span>
-      </div>
-      <div
-        id="menu"
-        class="hidden fixed top-12 left-0 p-3 flex-col w-full gap-3 items-center bg-white/80 text-zinc-600 sm:static sm:flex sm:flex-row sm:w-auto sm:p-0"
-      >
-        <a href="" class="hover:text-zinc-400">news</a>
-        <a href="" class="hover:text-zinc-400">profile</a>
-        <a href="" class="hover:text-zinc-400">discography</a>
-        <div class="flex gap-3 my-2 sm:my-0">
-          <a
-            href="https://www.instagram.com/hiroto_kanzaki_/"
-            class="hover:text-zinc-400"
-          >
-            <Icon name="fa6-brands:instagram" />
-          </a>
-          <a href="https://x.com/hirotokanzaki1" class="hover:text-zinc-400">
-            <Icon name="fa6-brands:x-twitter" />
-          </a>
-          <a
-            href="https://youtube.com/@hirotokanzaki3880"
-            class="hover:text-zinc-400"
-          >
-            <Icon name="fa6-brands:youtube" />
-          </a>
-          <a
-            href="https://www.tiktok.com/@k_hiroto_"
-            class="hover:text-zinc-400"
-          >
-            <Icon name="fa6-brands:tiktok" />
-          </a>
-        </div>
-      </div>
-      <button
-        id="menu-toggle"
-        class="relative flex size-6 items-center justify-center sm:hidden"
-        aria-label="Toggle menu"
-      >
-        <Icon
-          name="fa6-solid:bars"
-          id="icon-open"
-          class="absolute text-zinc-600 text-xl transition-opacity duration-300"
-        />
-        <Icon
-          name="fa6-solid:xmark"
-          id="icon-close"
-          class="absolute text-zinc-600 text-xl opacity-0 transition-opacity duration-300"
-        />
-      </button>
-    </header>
+    <Loading />
+    <Header />
     <div class="mx-auto text-center px-3 md:w-150">
       <img class="rounded" src="/profile.png" />
       <p class="mt-4 text-zinc-600 font-serif">hiroto kanzaki</p>
@@ -150,9 +69,6 @@ import "../styles/global.css";
     <p class="mt-5 font-serif text-center text-sm text-zinc-600">
       <a href="https://youtu.be/XHCkPFfkTdc">夢花火</a>
     </p>
-
-    <footer class="mt-16 mb-8 text-center">
-      <span class="text-xs text-zinc-600">© hiroto kanzaki</span>
-    </footer>
+    <Footer />
   </div>
 </html>

@@ -1,0 +1,28 @@
+---
+
+---
+
+<script>
+  const $ = (id: string) => document.getElementById(id);
+
+  if (!sessionStorage.getItem("visited")) {
+    sessionStorage.setItem("visited", "1");
+    setTimeout(
+      () => $("loading")?.classList.add("opacity-0", "pointer-events-none"),
+      2500,
+    );
+  } else {
+    $("loading")?.classList.add("hidden");
+  }
+</script>
+
+<div
+  id="loading"
+  class="fixed inset-0 z-50 flex items-center bg-white transition-opacity duration-[1.5s]"
+>
+  <div class="w-full text-center">
+    <span class="font-serif text-lg text-zinc-600 whitespace-nowrap">
+      hiroto kanzaki
+    </span>
+  </div>
+</div>

@@ -1,0 +1,66 @@
+---
+import { Icon } from "astro-icon/components";
+---
+
+<script>
+  const $ = (id: string) => document.getElementById(id);
+
+  $("menu-toggle")?.addEventListener("click", () => {
+    $("icon-open")?.classList.toggle("opacity-0");
+    $("icon-close")?.classList.toggle("opacity-0");
+    $("menu")?.classList.toggle("hidden");
+    $("menu")?.classList.toggle("flex");
+  });
+</script>
+
+<header class="mx-auto container p-6 flex items-center">
+  <div class="grow">
+    <span class="font-serif text-xl text-zinc-700 whitespace-nowrap">
+      hiroto kanzaki
+    </span>
+  </div>
+  <div
+    id="menu"
+    class="hidden fixed top-12 left-0 p-3 flex-col w-full gap-3 items-center bg-white/80 text-zinc-600 sm:static sm:flex sm:flex-row sm:w-auto sm:p-0"
+  >
+    <a href="" class="hover:text-zinc-400">news</a>
+    <a href="" class="hover:text-zinc-400">profile</a>
+    <a href="" class="hover:text-zinc-400">works</a>
+    <div class="flex gap-3 my-2 sm:my-0">
+      <a
+        href="https://www.instagram.com/hiroto_kanzaki_/"
+        class="hover:text-zinc-400"
+      >
+        <Icon name="fa6-brands:instagram" />
+      </a>
+      <a href="https://x.com/hirotokanzaki1" class="hover:text-zinc-400">
+        <Icon name="fa6-brands:x-twitter" />
+      </a>
+      <a
+        href="https://youtube.com/@hirotokanzaki3880"
+        class="hover:text-zinc-400"
+      >
+        <Icon name="fa6-brands:youtube" />
+      </a>
+      <a href="https://www.tiktok.com/@k_hiroto_" class="hover:text-zinc-400">
+        <Icon name="fa6-brands:tiktok" />
+      </a>
+    </div>
+  </div>
+  <button
+    id="menu-toggle"
+    class="relative flex size-6 items-center justify-center sm:hidden"
+    aria-label="Toggle menu"
+  >
+    <Icon
+      name="fa6-solid:bars"
+      id="icon-open"
+      class="absolute text-zinc-600 text-xl transition-opacity duration-300"
+    />
+    <Icon
+      name="fa6-solid:xmark"
+      id="icon-close"
+      class="absolute text-zinc-600 text-xl opacity-0 transition-opacity duration-300"
+    />
+  </button>
+</header>
